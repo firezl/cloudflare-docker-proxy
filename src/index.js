@@ -5,22 +5,20 @@ addEventListener("fetch", (event) => {
 
 const dockerHub = "https://registry-1.docker.io";
 
-// const routes = {
-//   // production
-//   "docker.libcuda.so": dockerHub,
-//   "quay.libcuda.so": "https://quay.io",
-//   "gcr.libcuda.so": "https://gcr.io",
-//   "k8s-gcr.libcuda.so": "https://k8s.gcr.io",
-//   "k8s.libcuda.so": "https://registry.k8s.io",
-//   "ghcr.libcuda.so": "https://ghcr.io",
-//   "cloudsmith.libcuda.so": "https://docker.cloudsmith.io",
-
-//   // staging
-//   "docker-staging.libcuda.so": dockerHub,
-// };
 const routes = {
-  "${workername}.${username}.workers.dev/": "https://registry-1.docker.io",
+  // production
+  "docker.fitue.cc": dockerHub,
+  "quay.fitue.cc": "https://quay.io",
+  "gcr.fitue.cc": "https://gcr.io",
+  "k8s-gcr.fitue.cc": "https://k8s.gcr.io",
+  "k8s.fitue.cc": "https://registry.k8s.io",
+  "ghcr.fitue.cc": "https://ghcr.io",
+  "cloudsmith.fitue.cc": "https://docker.cloudsmith.io",
+
+  // staging
+  "docker-staging.fitue.cc": dockerHub,
 };
+
 function routeByHosts(host) {
   if (host in routes) {
     return routes[host];
